@@ -1,0 +1,230 @@
+@use 'sass:color';
+@use '_globals';
+
+$button-color: color.scale($surface-color, $lightness: 15%);
+$button-hover-color: color.scale($button-color, $lightness: 25%);
+$pause-button-color: $button-hover-color;
+
+#menu {
+  @include surface;
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 20em;
+  box-sizing: border-box;
+  padding: 1em;
+  transition: transform .4s ease;
+  z-index: 5;
+  overflow-x: visible;
+  overflow-y: auto;
+
+  &.hidden {
+    transform: translateX(100%);
+    transition: transform .4s ease;
+  }
+
+  #btn-close-menu {
+    position: absolute;
+    top: .5em;
+    right: .5em;
+
+    border: 0;
+    background: transparent;
+    color: white;
+    opacity: 0.3;
+    transition: all .3s ease;
+    font-size: 1.5em;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 1.0;
+    }
+  }
+
+  fieldset {
+    border-radius: 6px;
+    margin-bottom: 1.3em;
+    padding: 0;
+    border: 0;
+  }
+
+  .field {
+    margin-top: 1em;
+  }
+
+  label {
+    margin: 0;
+  }
+
+  select {
+    width: 100%;
+    padding: .5em;
+    margin-top: 5px;
+    border-radius: 3px;
+    border: 0;
+  }
+}
+
+#random-init-options {
+  margin: 0 -1em;
+  padding: 0 1em;
+  max-height: 9em;
+  transition: all .5s ease;
+  overflow-y: hidden;
+
+  &.hidden {
+    max-height: 0;
+    transition: all .5s ease;
+  }
+}
+
+.control-buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 1em;
+
+  button {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 3em;
+    border: 0;
+    border-radius: 1px;
+
+    background: $button-color;
+    color: white;
+    font-weight: bold;
+
+    transition: all 0.3s;
+
+    &:hover:enabled {
+      cursor: pointer;
+      background-color: $button-hover-color;
+      transition: all 0.3s;
+    }
+
+    &:active:enabled {
+      background: darken($button-hover-color, 10%);
+      transition: all 0.1s;
+    }
+
+    &:disabled {
+      color: gray;
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes restart-icon-rotation {
+    50% {transform: rotate(180deg) scale(1.25)}
+    100% {transform: rotate(360deg) scale(1.0)}
+  }
+
+  #btn-restart {
+    border-radius: 5px 1px 1px 5px;
+    .animated {
+      animation: restart-icon-rotation 0.25s linear;
+    }
+  }
+
+  #btn-play-pause {
+    position: relative;
+    margin: 0 2px;
+    border-radius: 1px;
+
+    i {
+      display: inline-block;
+      position: absolute;
+      width: 1em;
+      height: 1em;
+      top: 50%;
+      left: 50%;
+      margin-top: -0.5em;
+      margin-left: -0.5em;
+    }
+
+    i.fa-play {
+      transform: rotate(0deg) scale(1);
+      transition: all .3s;
+      opacity: 1;
+    }
+
+    i.fa-pause {
+      transition: all .3s;
+      transform: rotate(-180deg) scale(.5);
+      opacity: 0;
+    }
+
+    &.playing {
+      background: $pause-button-color;
+
+      i.fa-pause {
+        transform: rotate(0deg) scale(1);
+        opacity: 1;
+      }
+
+      i.fa-play {
+        transform: rotate(180deg) scale(.5);
+        opacity: 0;
+      }
+
+      &:active {
+        background: darken($pause-button-color, 10%);
+      }
+    }
+  }
+
+  #btn-step-forward {
+    border-radius: 1px 5px 5px 1px;
+  }
+}
+
+.controls-header {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: -1em;
+}
+
+.show-keyboard-controls {
+  border: 0;
+  padding: 0;
+  font-size: 1rem;
+  margin: .5em;
+  color: gray;
+  transition: color 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    color: white;
+    transition: color 0.3s;
+  }
+}
+
+#btn-open-menu {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 1;
+
+  border: 0;
+  background: transparent;
+  color: white;
+  opacity: .75;
+  font-size: 1.75rem;
+  font-family: $header-font;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &.hidden {
+    opacity: 0;
+  }
+
+  &:hover {
+    opacity: 1.0;
+    transform: scale(1.09);
+    transition: all 0.3s ease;
+  }
+}

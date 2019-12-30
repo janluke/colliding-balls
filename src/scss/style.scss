@@ -1,0 +1,36 @@
+@import '_globals';
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+* {
+  outline: none;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: $canvas-color;
+  color: white;
+}
+
+h2 {
+  font-family: $header-font;
+  font-size: 1.3em;
+  margin: 0.5em 0;
+}
+
+#canvas {
+  width: 100%;
+  height: 100%;
+}
+
+
+@import '_checkbox';
+@import '_nouislider';
+@import '_menu';
+@import '_plugins';
+@import '_keyboard-controls';

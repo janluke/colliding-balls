@@ -1,0 +1,90 @@
+@use 'sass:color';
+@use '_globals';
+
+@import '~nouislider/distribute/nouislider.css';
+
+$track-size: 5px;
+$track-color: color.scale($surface-color, $lightness: 15%);
+$handle-size: 15px;
+$handle-color: white;
+
+.noUi-target {
+  background: $track-color;
+  box-shadow: none;
+  margin: 1.1em 0;
+}
+
+.noUi-horizontal {
+  height: $track-size;
+  padding: 0 $handle-size/2;
+  border: 0;
+  cursor: pointer;
+  background: $track-color;
+
+  &:hover {
+    background-color: lighten($track-color, 10%);
+  }
+
+  .noUi-handle {
+    height: $handle-size;
+    width: $handle-size;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.1s;
+
+    display: flex;
+    align-items: center;
+    justify-items: center;
+
+    background: $handle-color;
+    box-shadow: none;
+    border: 0;
+
+    &:after, &:before {
+      content: none;
+    }
+
+    &:hover {
+      transform: scale(1.15);
+      transition: transform 0.2s;
+    }
+
+    &:active {
+      transform: scale(1.3);
+      transition: all 0.2s;
+    }
+  }
+}
+
+.noUi-connect {
+  background: $primary-color;
+}
+
+html:not([dir="rtl"]) .noUi-horizontal {
+  .noUi-handle {
+    right: -$handle-size/2;
+    top: -($handle-size - $track-size)/2
+  }
+}
+
+// Tooltips
+.noUi-horizontal .noUi-tooltip {
+  visibility: hidden;
+  background: white;
+  bottom: 140%;
+  opacity: 0;
+  font-size: 1em;
+  color: black;
+  border: 0;
+  padding: 5px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.noUi-handle {
+  &:active .noUi-tooltip, &:hover .noUi-tooltip {
+    visibility: visible;
+    opacity: 100%;
+    transition: all 0.3s;
+  }
+}

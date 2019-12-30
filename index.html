@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Colliding balls</title>
+
+    <!-- Google fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron|Roboto&display=swap">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+
+    <link rel="shortcut icon" href="#">
+</head>
+
+<body>
+<canvas id="canvas"></canvas>
+
+<button id="btn-open-menu" class="hidden">
+    <i class="fas fa-bars"></i> Menu
+</button>
+
+<div id="menu">
+    <button id="btn-close-menu" class="fas fa-angle-double-right"
+       data-tippy-content="Hide menu">
+    </button>
+
+    <fieldset>
+        <div class="controls-header">
+            <h2>Controls</h2>
+            <div class="show-keyboard-controls far fa-keyboard"></div>
+        </div>
+
+        <!-- Initialization -->
+        <div class="field">
+            <label for="initialization-dropdown">Initialization:</label>
+            <select id="initialization-dropdown"></select>
+        </div>
+
+        <div id="random-init-options">
+            <!-- Number of balls -->
+            <div class="field">
+                <label for="num-balls-slider">
+                    Number of balls [<span id="num-balls-label"></span>]:
+                </label>
+                <div id="num-balls-slider"></div>
+            </div>
+
+            <!-- Ball size mean -->
+            <div class="field">
+                <label for="ball-size-slider">Ball radius range
+                    [<span id="radius-min-label"></span> -
+                    <span id="radius-max-label"></span>]:
+                </label>
+                <div id="ball-size-slider"></div>
+            </div>
+        </div>
+
+        <div class="field">
+            <div id="auto-play-checkbox">Auto-start new simulations</div>
+        </div>
+
+        <!-- Buttons (restart | play | next frame) -->
+        <div class="control-buttons">
+            <button id="btn-restart" data-tippy-content="Restart/refresh">
+                <i class="fa fa-redo"></i>
+            </button>
+            <button id="btn-play-pause" data-tippy-content="Pause">
+                <i class="fa fa-pause"></i>
+                <i class="fa fa-play"></i>
+            </button>
+            <button id="btn-step-forward" data-tippy-content="Step forward">
+                <i class="fa fa-step-forward"></i>
+            </button>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <h2>Options</h2>
+
+        <!-- Ball label -->
+        <div class="field">
+            <label for="ball-label-dropdown">Ball label:</label>
+            <select id="ball-label-dropdown">
+                <option value="none">None</option>
+                <option value="id">ID</option>
+                <option value="speed">Speed</option>
+            </select>
+        </div>
+
+        <!-- Draw velocity vector -->
+        <div class="field">
+            <div id="velocity-vector-checkbox">Draw velocity vector</div>
+        </div>
+
+        <!-- Light up balls on collision -->
+        <div class="field">
+            <div id="light-up-checkbox">Light-up balls on collision</div>
+        </div>
+
+        <!-- Show FPS -->
+        <div class="field">
+            <div id="show-fps-checkbox">Show FPS</div>
+        </div>
+
+        <!-- Show times -->
+        <div class="field">
+            <div id="show-times-checkbox">Show times breakdown</div>
+        </div>
+
+        <!-- Log kinetic energy -->
+        <div class="field">
+            <div id="log-energy-checkbox">Log kinetic energy (console)</div>
+        </div>
+    </fieldset>
+</div>
+</body>
+
+</html>

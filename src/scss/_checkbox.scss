@@ -1,0 +1,6 @@
+@use '_globals.scss';
+
+$pretty--color-primary: $primary-color;
+
+@import '~pretty-checkbox/src/pretty-checkbox.scss';
+

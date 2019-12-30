@@ -1,0 +1,12 @@
+@use 'sass:color';
+
+$primary-color: rgba(22, 104, 255);
+$canvas-color: #070707;
+$surface-color: color.scale($canvas-color, $lightness: -55%);
+$header-font: Orbitron, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+@mixin surface($alpha: 0.90) {
+  background: color.change($surface-color, $alpha: $alpha);
+  border: 1px solid color.scale($surface-color, $lightness: 8%);
+  box-shadow: 0 0 6px 2px $surface-color;
+}
