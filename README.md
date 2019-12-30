@@ -6,13 +6,12 @@ Several _plugins are implemented in [_plugins.js](https://github.com/janLuke/col
 measuring performances...
 
 ## Try it
-Try it at https://janluke.github.io/colliding-balls/index.html. 
-Note: the number inside each ball is proportional to the ball's (truncated) speed.
+Try it at https://janluke.github.io/colliding-balls/index.html
 
 | Command                   | Key(s)                               |
 |---------------------------|--------------------------------------|
-| Restart/refresh           | <kbd>r</kbd>                    |
-| Pause/resume              | <kbd>p</kbd>                    |
+| Restart/refresh           | <kbd>r</kbd>                         |
+| Pause/resume              | <kbd>p</kbd>                         |
 | Next frame (while paused) | <kbd>→</kbd>                         |
 | Increase/decrease speed   | <kbd>↑</kbd>  / <kbd>↓</kbd>         |
 
