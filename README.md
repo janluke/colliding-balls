@@ -40,9 +40,10 @@ for a comparison between PIT and the more precise (but more computationally expe
 
 The algorithm aims to decently handle complex cases where the effect of a collision must 
 be propagated to obtain the right result. This is done through a kind of "sequential collision resolution" 
-procedure. I didn't take the algorithm from a book so it's probably not the best way to do it but here it is:
+procedure. I didn't take the algorithm from a book so it's probably not the best way to do it. 
+Here it is (the actual implementation is slightly different):
 
-* For each ball, find the list of balls and walls interlappint to it.
+* For each ball, find the list of balls and walls interlapping to it.
 * Initialize a set `pairsToCheck` with all pairs of interlapping objects `(ball, obj)`
   where `obj` can be a ball or a wall.
 * While `pairsToCheck` is not empty (and for a max of `T` iterations):
