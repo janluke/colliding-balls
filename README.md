@@ -55,4 +55,4 @@ Here it is (the actual implementation is slightly different):
             - update `y.velocity` if `y` is not a wall
         * (**Propagation**) (Re)add the following pairs to `pairsToCheck` (if not present):
             - all pairs `(i_x, h)` where `i_x` is a ball interlapping with `x` and `h != x`
-            - all pairs `(i_y, k)` where `i_y` is a ball interlapping with `y` and `k != y` if `y` is not a wall
+            - if `y` is not a wall, all pairs `(i_y, k)` where `i_y` is a ball interlapping with `y` and `k != y`
