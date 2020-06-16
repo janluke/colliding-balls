@@ -38,12 +38,12 @@ in some circumstances, a collision may not be detected at all;
 see [this document](https://www.cc.gatech.edu/~jarek/graphics/material/collisionWarkariJamsandekar.pdf)
 for a comparison between PIT and the more precise (but more computationally expensive) PIC methods.
 
-The algorithm intends to handle (decently) complex cases where the effect of a collision must 
-be propagated to obtain the right result. This is done through a kind of "sequential collision resolution" 
+The algorithm is meant to (decently) handle complex cases in which the effect of a collision must 
+be propagated to obtain an accurate resolution. This is done through a kind of "sequential collision resolution" 
 procedure. It doesn't work perfectly in all circumstances (e.g. try the "Two hit one (45°)" initialization)
 but it works well most of the times.
 I didn't take the algorithm from a book so it's probably not the best way to do it. 
-Here it is (the actual implementation is slightly different):
+Here is the gist of it (the actual implementation is slightly different):
 
 * For each ball, find the list of balls and walls interlapping to it.
 * Initialize a set `pairsToCheck` with all pairs of interlapping objects `(ball, obj)`
