@@ -1,6 +1,8 @@
+/*! nouislider - 14.6.0 - 6/27/2020 */
+
 /**!
  * @fileOverview Kickass library to create and place poppers near their reference elements.
- * @version 1.16.0
+ * @version 1.16.1
  * @license
  * Copyright (c) 2016 Federico Zivolo and contributors
  *
@@ -24,9 +26,7 @@
  */
 
 /**!
-* tippy.js v5.1.2
-* (c) 2017-2019 atomiks
+* tippy.js v5.2.1
+* (c) 2017-2020 atomiks
 * MIT License
 */
-
-/*! nouislider - 14.0.3 - 10/10/2019 */
