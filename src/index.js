@@ -66,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 engineController.reinitialize();
                 break;
 
-            case ' ':
             case 'p':
                 engine.togglePause();
                 break;
