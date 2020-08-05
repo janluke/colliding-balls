@@ -6,7 +6,7 @@ Several plugins are implemented in [plugins.js](src/plugins.js). In general, the
 measuring performances...
 
 ## Try it
-Try it at https://janluke.github.io/colliding-balls/index.html
+Try it at https://janluke.github.io/colliding-balls/
 
 | Command                   | Key(s)                               |
 |---------------------------|--------------------------------------|
